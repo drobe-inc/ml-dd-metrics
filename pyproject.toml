@@ -6,7 +6,7 @@ authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
 python = "~3.9"
-datadog-api-client = "^2.2.0"
+datadog-api-client = "^2.3.0"
 
 [tool.poetry.dev-dependencies]
 pylint = "^2.4.4"

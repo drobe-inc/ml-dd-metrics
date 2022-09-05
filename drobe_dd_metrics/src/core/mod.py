@@ -12,10 +12,8 @@ from datadog_api_client.v2.model.metric_payload import MetricPayload
 from datadog_api_client.v2.model.metric_point import MetricPoint
 from datadog_api_client.v2.model.metric_series import MetricSeries
 
-import os
- 
 
-def send_custom_metrics_to_dd(metric: str, tags: List[str], value: float):
+def send_custom_metrics_to_dd(metric: str, tags: List[str], value: float, dd_api_key: str):
     body = MetricPayload(
         series=[
             MetricSeries(
@@ -33,7 +31,7 @@ def send_custom_metrics_to_dd(metric: str, tags: List[str], value: float):
     )
 
     configuration = Configuration()
-    configuration.api_key["apiKeyAuth"] = os.environ('DD_API_KEY')
+    configuration.api_key["apiKeyAuth"] = dd_api_key
     with ApiClient(configuration) as api_client:
         api_instance = MetricsApi(api_client)
         response = api_instance.submit_metrics(body=body)
