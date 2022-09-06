@@ -1,5 +1,6 @@
 from .core.mod import send_custom_metrics_to_dd
 
+
 class DrobeDDMetricsSender:
     def __init__(self, ml_category: str, model_tag: str, env: str, dd_api_key: str):
         """
@@ -26,7 +27,6 @@ class DrobeDDMetricsSender:
         self.model_tag = model_tag
         self.env = env
         self.dd_api_key = dd_api_key
-
 
     def send_ml_metric(self, metric_type: str, score: float) -> None:
         """
