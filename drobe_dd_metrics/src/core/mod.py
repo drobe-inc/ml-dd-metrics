@@ -17,6 +17,11 @@ NUM_MAX_RETRY = 3
 
 
 def send_custom_metrics_to_dd(metric: str, tags: List[str], value: float, dd_api_key: str):
+    # dd_api_key が set されていない場合は送らない
+    if (dd_api_key is None): 
+        print("[dd-metrics][dev] category: {}, value: {}, tags: {} ".format(metric, value, tags))
+        return
+
     body = MetricPayload(
         series=[
             MetricSeries(
