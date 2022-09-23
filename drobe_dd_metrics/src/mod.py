@@ -22,7 +22,7 @@ class DrobeDDMetricsSender:
         assert type(model_tag).__name__ == "str", "The type of model_tag should be str, but {}".format(
             type(model_tag).__name__
         )
-        assert env == "stg" or env == "prd", 'The env shoulde be "stg" or "prod", but {}'.format(env)
+        assert env == "stg" or env == "prod", 'The env shoulde be "stg" or "prod", but {}'.format(env)
         self.ml_category = ml_category
         self.model_tag = model_tag
         self.env = env
