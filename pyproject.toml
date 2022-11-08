@@ -1,11 +1,11 @@
 [tool.poetry]
 name = "drobe-dd-metrics"
-version = "0.0.7"
+version = "0.0.8"
 description = "The wraper for datadog api."
 authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
-python = "~3.9"
+python = "^3.7"
 datadog-api-client = "^2.3.0"
 
 [tool.poetry.dev-dependencies]
